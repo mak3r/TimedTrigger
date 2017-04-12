@@ -8,5 +8,6 @@ A window service for running scheduled triggers on the Apprenda platform
 * Promote to Sandbox or Published
 * Done
 
-# TriggerMonitor is based off of the microsoft sample code
+# TriggerMonitor 
+Based off of the microsoft sample code
 https://docs.microsoft.com/en-us/aspnet/web-api/overview/getting-started-with-aspnet-web-api/tutorial-your-first-web-api
