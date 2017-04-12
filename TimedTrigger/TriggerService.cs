@@ -8,10 +8,10 @@ using System.Threading.Tasks;
 
 namespace TimedTrigger
 {
-    public partial class Service1 : ServiceBase
+    public partial class TriggerService : ServiceBase
     {
         private static readonly ILogger log =
-            LogManager.Instance().GetLogger(typeof(Service1));
+            LogManager.Instance().GetLogger(typeof(TriggerService));
 
         //Reuse the same client over and over again
         private static readonly HttpClient client = new HttpClient();
@@ -22,7 +22,7 @@ namespace TimedTrigger
         //When should we trigger the event
         DateTime triggerTime = DateTime.Now.AddMinutes(minFromNow);
 
-        public Service1()
+        public TriggerService()
         {
             InitializeComponent();
 

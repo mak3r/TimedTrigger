@@ -1,6 +1,6 @@
 ﻿namespace TimedTrigger
 {
-    partial class Service1
+    partial class TriggerService
     {
         /// <summary> 
         /// Required designer variable.

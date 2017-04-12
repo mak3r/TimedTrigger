@@ -17,7 +17,7 @@ namespace TimedTrigger
             ServiceBase[] ServicesToRun;
             ServicesToRun = new ServiceBase[]
             {
-                new Service1()
+                new TriggerService()
             };
             ServiceBase.Run(ServicesToRun);
         }
