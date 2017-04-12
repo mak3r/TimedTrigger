@@ -1,5 +1,7 @@
 ﻿using Apprenda.Services.Logging;
 using System;
+using System.Collections.Generic;
+using System.Configuration;
 using System.Net.Http;
 using System.ServiceProcess;
 using System.Threading.Tasks;
@@ -48,17 +50,22 @@ namespace TimedTrigger
         {
             //Reset the trigger time for the next time it should trigger
             triggerTime = DateTime.Today.AddMinutes(minFromNow);
-            String result = await RESTfulGet();
-            log.Debug(result);
+            var content = new FormUrlEncodedContent(new[]
+                        {
+                new KeyValuePair<string, string>("", "")
+            });
+            var result = await RESTfulPost(content);
+            log.Debug(result.ToString());
         }
 
-        private async Task<String> RESTfulGet()
+        private async Task<HttpContent> RESTfulPost(HttpContent content)
         {
             //fire an http GET request here 
             //todo: make this a configurable parameter based on the deployed application name
-            var responseString = await client.GetStringAsync("http://www.google.com/api/");
+//            var responseString = await client.GetStringAsync(ConfigurationManager.AppSettings["appUrl"] + "/counter/0");
 
-            return responseString;
+            var responseString2 = await client.PostAsync(ConfigurationManager.AppSettings["appUrl"] + "/counter/0", content);
+            return responseString2.Content;
         }
     }
 }
