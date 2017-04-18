@@ -1,0 +1,7 @@
+<?xml version="1.0"?>
+<appManifest xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://schemas.apprenda.com/DeploymentManifest http://apprenda.com/schemas/platform/6.6/DeploymentManifest.xsd" xmlns="http://schemas.apprenda.com/DeploymentManifest">
+  <!--Required: service name, nameOfExecutable-->
+  <windowsServices>
+    <service name="TimedTrigger" requires32Bit="false" nameOfExecutable="TimedTrigger.exe"/>
+  </windowsServices>
+</appManifest>
